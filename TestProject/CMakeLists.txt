@@ -21,6 +21,7 @@ set(RESOURCE_FILES
   ${TULIPA_HOME_DIR}/resources/win32/app.ico
 )
 
+
 SOURCE_GROUP("Header Files" FILES ${HEADER_FILES})
 SOURCE_GROUP("Source Files" FILES ${SOURCE_FILES})
 SOURCE_GROUP("Resource Files" FILES ${RESOURCE_FILES})

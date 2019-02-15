@@ -1,5 +1,5 @@
 #include "mswindow.h"
-#include "easy_app.h"
+#include "common/easy_app.h"
 #include "resources/win32/icondefine.h"
 
 #include <string>

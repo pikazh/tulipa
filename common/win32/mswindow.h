@@ -1,8 +1,8 @@
 #pragma once
 
-#include "comdef.h"
-#include "window.h"
-#include "signal.h"
+#include "common/comdef.h"
+#include "common/window.h"
+#include "common/signal.h"
 
 BEGIN_NS_TULIPA
 

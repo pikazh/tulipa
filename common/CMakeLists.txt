@@ -29,21 +29,21 @@ set(RESOURCE_FILES
 if(MSVC)
   set(HEADER_FILES 
     ${HEADER_FILES}
-    ${TULIPA_HOME_DIR}/common/msgui.h
-    ${TULIPA_HOME_DIR}/common/mswindow.h
+    ${TULIPA_HOME_DIR}/common/win32/msgui.h
+    ${TULIPA_HOME_DIR}/common/win32/mswindow.h
     )
 
   set(SOURCE_FILES 
     ${SOURCE_FILES}
-    ${TULIPA_HOME_DIR}/common/msgui.cpp
-    ${TULIPA_HOME_DIR}/common/mswindow.cpp
+    ${TULIPA_HOME_DIR}/common/win32/msgui.cpp
+    ${TULIPA_HOME_DIR}/common/win32/mswindow.cpp
     )
 endif(MSVC)
 
 
-SOURCE_GROUP("Header Files" FILES ${HEADER_FILES})
-SOURCE_GROUP("Source Files" FILES ${SOURCE_FILES})
-SOURCE_GROUP("Resource Files" FILES ${RESOURCE_FILES})
+SOURCE_GROUP(TREE "${TULIPA_HOME_DIR}/common" PREFIX "Header Files" FILES ${HEADER_FILES})
+SOURCE_GROUP(TREE "${TULIPA_HOME_DIR}/common" PREFIX "Source Files" FILES ${SOURCE_FILES})
+SOURCE_GROUP(TREE "${TULIPA_HOME_DIR}/common" PREFIX "Resource Files" FILES ${RESOURCE_FILES})
 
 ADD_LIBRARY(${CURRENT_PROJ} STATIC ${HEADER_FILES} ${SOURCE_FILES} ${RESOURCE_FILES})
 

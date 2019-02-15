@@ -1,5 +1,5 @@
 #include "common/easy_app.h"
-#include "common/msgui.h"
+#include "common/win32/msgui.h"
 
 BEGIN_NS_TULIPA
 class MyApp :

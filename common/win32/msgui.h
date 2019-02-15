@@ -1,7 +1,7 @@
 #pragma once
 
-#include "comdef.h"
-#include "gui.h"
+#include "common/comdef.h"
+#include "common/gui.h"
 #include "mswindow.h"
 
 BEGIN_NS_TULIPA

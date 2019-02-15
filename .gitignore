@@ -11,11 +11,12 @@
 #  Paths in this file should use forward slash characters, not back slashes
 #  Use \ to escape special characters like ! and #
 #  Use ! to negate a previous pattern.  But it doesn't work if the parent sub-folder was masked out already.
-# 
+
 
 /buildx64
 /buildx86
+#ignore output dir files
 /bin
 /lib
-#binary versions of resource files from msvc
+#binary version of resource files from msvc
 *.aps
