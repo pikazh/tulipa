@@ -1,0 +1,5 @@
+if(MSVC)
+	include(${CMAKE_CURRENT_LIST_DIR}/msvc.cmake)
+elseif(MINGW OR UNIX)
+	include(${CMAKE_CURRENT_LIST_DIR}/gcc.cmake)
+endif()
