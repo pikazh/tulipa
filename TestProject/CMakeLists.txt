@@ -10,7 +10,7 @@ LINK_DIRECTORIES(
 )
 
 set(SOURCE_FILES 
-  ${TULIPA_HOME_DIR}/DX12TestProject/main.cpp
+  ${TULIPA_HOME_DIR}/TestProject/main.cpp
 )
 
 SOURCE_GROUP("Header Files" FILES ${HEADER_FILES})
