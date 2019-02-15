@@ -13,10 +13,8 @@
 #  Use ! to negate a previous pattern.  But it doesn't work if the parent sub-folder was masked out already.
 
 
-/buildx64
-/buildx86
 #ignore output dir files
-/bin
-/lib
+/out
+/msvcprojs
 #binary version of resource files from msvc
 *.aps
