@@ -1,6 +1,6 @@
 #include "mswindow.h"
-#include "resource.h"
 #include "easy_app.h"
+#include "resources/win32/icondefine.h"
 
 #include <string>
 #include <cassert>
@@ -81,7 +81,6 @@ bool MsWindow::Create()
 		return false;
 	}
 
-	
 	ShowWindow(hwnd_, SW_SHOW);
 	UpdateWindow(hwnd_);
 
@@ -98,12 +97,12 @@ ATOM MsWindow::RegisterWindowClass()
 	wcex.cbClsExtra = 0;
 	wcex.cbWndExtra = 0;
 	wcex.hInstance = hinst;
-	wcex.hIcon = LoadIconW(hinst, MAKEINTRESOURCEW(IDI_ICON));
+	wcex.hIcon = LoadIconW(hinst, MAKEINTRESOURCEW(IDI_APPICON));
 	wcex.hCursor = LoadCursor(NULL, IDC_ARROW);
 	wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
 	wcex.lpszMenuName = NULL;
 	wcex.lpszClassName = wnd_class_name_.c_str();
-	wcex.hIconSm = LoadIconW(hinst, MAKEINTRESOURCEW(IDI_ICON));
+	wcex.hIconSm = LoadIconW(hinst, MAKEINTRESOURCEW(IDI_APPICON));
 
 	return RegisterClassExW(&wcex);
 }

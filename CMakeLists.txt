@@ -8,7 +8,6 @@ set(TULIPA_HOME_DIR ${CMAKE_HOME_DIRECTORY})
 
 include (${TULIPA_HOME_DIR}/cmake/variables.cmake)
 include (${TULIPA_HOME_DIR}/cmake/macros.cmake)
-MESSAGE(STATUS ${CMAKE_VS_PLATFORM_NAME})
 
 
 ADD_SUBDIRECTORY(common)

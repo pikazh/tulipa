@@ -1,8 +1,4 @@
-//{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ generated include file.
-// Used by DX12TestProject.rc
-//
-#define IDI_ICON                       101
+#define IDI_APPICON                       101
 
 // Next default values for new objects
 // 

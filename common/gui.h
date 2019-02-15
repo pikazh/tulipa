@@ -2,8 +2,8 @@
 
 #include <stdint.h>
 
-#include "comdef.h"
 #include "window.h"
+#include "comdef.h"
 
 BEGIN_NS_TULIPA
 

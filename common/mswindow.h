@@ -2,7 +2,7 @@
 
 #include "comdef.h"
 #include "window.h"
-#include "Signal.h"
+#include "signal.h"
 
 BEGIN_NS_TULIPA
 
