@@ -17,3 +17,5 @@
 /buildx86
 /bin
 /lib
+#binary versions of resource files from msvc
+*.aps
