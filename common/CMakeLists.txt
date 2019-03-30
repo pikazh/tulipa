@@ -10,7 +10,7 @@ LINK_DIRECTORIES(
 )
 
 set(HEADER_FILES 
-  ${TULIPA_HOME_DIR}/common/comdef.h
+  ${TULIPA_HOME_DIR}/common/commondef.h
   ${TULIPA_HOME_DIR}/common/easy_app.h
   ${TULIPA_HOME_DIR}/common/gui.h
   ${TULIPA_HOME_DIR}/common/signal.h

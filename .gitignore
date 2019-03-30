@@ -15,6 +15,5 @@
 
 #ignore output dir files
 /out
-/msvcprojs
 #binary version of resource files from msvc
 *.aps

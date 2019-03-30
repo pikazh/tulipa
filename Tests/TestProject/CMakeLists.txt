@@ -13,7 +13,7 @@ set(HEADER_FILES
 )
 
 set(SOURCE_FILES 
-  ${TULIPA_HOME_DIR}/TestProject/main.cpp
+  ${TULIPA_HOME_DIR}/Tests/TestProject/main.cpp
 )
 
 set(RESOURCE_FILES

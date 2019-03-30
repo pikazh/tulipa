@@ -2,7 +2,7 @@
 
 #include <functional>
 
-#include "comdef.h"
+#include "commondef.h"
 
 BEGIN_NS_TULIPA
 

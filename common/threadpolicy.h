@@ -4,7 +4,7 @@
 #include <mutex>
 #include <cassert>
 
-#include "comdef.h"
+#include "commondef.h"
 
 BEGIN_NS_TULIPA
 

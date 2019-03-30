@@ -1,6 +1,6 @@
 #pragma once
 
-#include "common/comdef.h"
+#include "common/commondef.h"
 #include "common/gui.h"
 #include "mswindow.h"
 
