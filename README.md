@@ -1,7 +1,5 @@
-### Tulipa
-
-------
-
+Tulipa 
+==== 
 Some useful classes which are written in C++11/14/17.
 
 All helper classes files are in the "common" directory, and functionality tests and examples for how to use them are in the "tests" directory.
