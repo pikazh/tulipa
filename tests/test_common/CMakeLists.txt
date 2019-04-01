@@ -1,2 +1,3 @@
 ADD_SUBDIRECTORY(test_signal)
 ADD_SUBDIRECTORY(test_atexitmanager)
+ADD_SUBDIRECTORY(test_taskqueue)
