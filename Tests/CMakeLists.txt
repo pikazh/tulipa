@@ -1,2 +1,1 @@
-ADD_SUBDIRECTORY(TestProject)
-ADD_SUBDIRECTORY(TestCommon)
+ADD_SUBDIRECTORY(test_common)

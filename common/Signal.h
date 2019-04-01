@@ -1,6 +1,5 @@
 #pragma once
 
-#include <stdint.h>
 #include <memory>
 #include <map>
 #include <functional>
@@ -30,42 +29,54 @@ public:
 		DisconnectAll();
 	}
 
-	template<typename CLS, typename FUNC>
-	uint32_t Connect(std::weak_ptr<CLS> &obj, FUNC func)
-	{
-		auto thread_policy = thread_policy_ptr_->OnFunctionCall();
-
-		callbacks_[id_] = ([obj, func](Params... p) {
-			std::shared_ptr<CLS> sp_obj = obj.lock();
-			if (!!sp_obj) {
-				(sp_obj.get()->*func)(std::forward<Params>(p)...);
-			}
-		});
-
-		return id_++;
-	}
-
-	template<typename CLS, typename FUNC>
-	uint32_t Connect(std::weak_ptr<CLS> &&obj, FUNC func)
-	{
-		auto thread_policy = thread_policy_ptr_->OnFunctionCall();
-
-		//Generalized lambda capture in C++14
-		callbacks_[id_] = ([o{ std::forward<std::weak_ptr<CLS>>(obj) }, func](Params... p) {
-			std::shared_ptr<CLS> sp_obj = o.lock();
-			if (!!sp_obj) {
-				(sp_obj.get()->*func)(std::forward<Params>(p)...);
-			}
-		});
-
-		return id_++;
-	}
-
 	uint32_t Connect(std::function<void(Params...)> func)
 	{
 		auto thread_policy = thread_policy_ptr_->OnFunctionCall();
 
 		callbacks_[id_] = func;
+
+		return id_++;
+	}
+
+	template<typename CLS>
+	uint32_t Connect(void(CLS::*fptr)(Params...), CLS &obj)
+	{
+		auto thread_policy = thread_policy_ptr_->OnFunctionCall();
+
+		callbacks_[id_] = ([&obj, fptr](Params... p) {
+			(obj.*fptr)(std::forward<Params>(p)...);
+		});
+
+		return id_++;
+	}
+
+	template<typename CLS>
+	uint32_t Connect(void(CLS::*fptr)(Params...), std::weak_ptr<CLS> &obj)
+	{
+		auto thread_policy = thread_policy_ptr_->OnFunctionCall();
+
+		callbacks_[id_] = ([obj, fptr](Params... p) {
+			std::shared_ptr<CLS> sp_obj = obj.lock();
+			if (!!sp_obj) {
+				(sp_obj.get()->*fptr)(std::forward<Params>(p)...);
+			}
+		});
+
+		return id_++;
+	}
+
+	template<typename CLS>
+	uint32_t Connect(void(CLS::*fptr)(Params...), std::shared_ptr<CLS> &obj)
+	{
+		auto thread_policy = thread_policy_ptr_->OnFunctionCall();
+		
+		std::weak_ptr<CLS> ptr = obj;
+		callbacks_[id_] = ([ptr, fptr](Params... p) {
+			std::shared_ptr<CLS> sp_obj = ptr.lock();
+			if (!!sp_obj) {
+				(sp_obj.get()->*fptr)(std::forward<Params>(p)...);
+			}
+		});
 
 		return id_++;
 	}

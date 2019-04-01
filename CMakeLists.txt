@@ -11,4 +11,4 @@ include (${TULIPA_HOME_DIR}/cmake/macros.cmake)
 include (${TULIPA_HOME_DIR}/cmake/compilers_config.cmake)
 
 ADD_SUBDIRECTORY(common)
-ADD_SUBDIRECTORY(Tests)
+ADD_SUBDIRECTORY(tests)

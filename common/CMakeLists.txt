@@ -15,12 +15,14 @@ set(HEADER_FILES
   ${TULIPA_HOME_DIR}/common/gui.h
   ${TULIPA_HOME_DIR}/common/signal.h
   ${TULIPA_HOME_DIR}/common/threadpolicy.h
-  ${TULIPA_HOME_DIR}/common/window.h  
+  ${TULIPA_HOME_DIR}/common/window.h
+  ${TULIPA_HOME_DIR}/common/atexitmanager.h
 )
 
 set(SOURCE_FILES 
   ${TULIPA_HOME_DIR}/common/easy_app.cpp
   ${TULIPA_HOME_DIR}/common/threadpolicy.cpp
+  ${TULIPA_HOME_DIR}/common/atexitmanager.cpp
 )
 
 set(RESOURCE_FILES

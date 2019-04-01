@@ -14,6 +14,14 @@ else()
 	set(CMAKE_CXX_FLAGS_MINSIZEREL "")
 endif()
 
+if (MSVC_VERSION GREATER_EQUAL "1900")
+    include(CheckCXXCompilerFlag)
+    CHECK_CXX_COMPILER_FLAG("/std:c++latest" _cpp_latest_flag_supported)
+    if (_cpp_latest_flag_supported)
+        add_compile_options("/std:c++latest")
+    endif()
+endif()
+
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /Od /Ob0 /RTC1 /MDd /GS /fp:precise /D_DEBUG")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /O2 /Ob2 /GS- /fp:fast /MD /DNDEBUG")
 set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} /O2 /Ob2 /GS- /fp:fast /MD /DNDEBUG")
@@ -62,7 +70,6 @@ foreach(FLAG_VAR
 	CMAKE_EXE_LINKER_FLAGS_MINSIZEREL CMAKE_MODULE_LINKER_FLAGS_MINSIZEREL CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL)
 	set(${FLAG_VAR} "${${FLAG_VAR}} /LTCG")
 endforeach(FLAG_VAR)
-
 
 #MESSAGE(STATUS ${CMAKE_CXX_FLAGS_DEBUG})
 #MESSAGE(STATUS ${CMAKE_CXX_FLAGS_RELEASE})
